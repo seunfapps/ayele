@@ -38,11 +38,11 @@
                     name: 'pregnant',
                     url: 'audio/pregnant.mp3'
                 },
-                 {
+                {
                     name: 'jesu',
                     url: 'audio/jesu.mp3'
                 },
-                 {
+                {
                     name: 'o ja mi lara',
                     url: 'audio/jamilaraje.mp3'
                 },
@@ -54,7 +54,7 @@
                     name: 'gerrarhia',
                     url: 'audio/gerrarhia.mp3'
                 },
-                 {
+                {
                     name: 'whip',
                     url: 'audio/whip.mp3'
                 }
@@ -75,12 +75,9 @@
             <div class="col-md-6 col-md-offset-3">
                 <div ng-app='myApp' ng-controller="ctrl">
                     <button class="btn btn-default btn-large" ng-repeat="playlist in playlists" ng-click="play(playlist.url)">{{playlist.name}}</button>
-                </div>  
+                </div>
             </div>
         </div>
     </div>
-
-
 </body>
-
 </html>
