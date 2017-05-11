@@ -1,5 +1,7 @@
 body {
 	background-color: #fafafa;
+	background-color: #DFDBE5;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 	text-align: center;
 }
 
@@ -32,12 +34,20 @@ li a {
 	width: 100%;
 	display: table;
 }
+
+img {
+	width: 35px;
+}
+
+a:hover {
+	text-decoration: none;
+}
 .main-content-card {
 	background-color: #fff;
 	height: 120px;
-	border-radius: 3px;
-	-webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
-	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+	border-radius: 4px;
+	-webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
 	/*border: 1px solid #111;*/
 	padding: 12px;
 	text-align: center;
