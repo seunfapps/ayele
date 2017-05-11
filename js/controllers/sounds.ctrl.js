@@ -3,65 +3,104 @@ myApp.controller('ctrl', function ($scope) {
         {
             name: 'aye le',
             url: 'audio/ayele.mp3',
-            img:'img/cryinglaugh.png'
-            
+            img: 'img/cryinglaugh.png'
         },
         {
             name: 'chai',
             url: 'audio/chai.mp3',
-            img:'img/loudcryinglaugh.png'
+            img: 'img/loudcryinglaugh.png'
         }, {
             name: 'apostle',
             url: 'audio/apostle.mp3',
-            img:'img/cryinglaugh.png'
+            img: 'img/cryinglaugh.png'
         }, {
             name: 'jiya',
             url: 'audio/jiya.mp3',
-            img:'img/closedeyelaugh.png'
+            img: 'img/closedeyelaugh.png'
         }, {
             name: 'lord',
             url: 'audio/lord.mp3',
-            img:'img/grinningface.png'
+            img: 'img/grinningface.png'
         }, {
             name: 'funke',
             url: 'audio/funke.mp3',
-            img:'img/rollingeyes.png'
+            img: 'img/rollingeyes.png'
         },
         {
             name: 'aye mi',
             url: 'audio/ayemi.mp3',
-            img:'img/sadface.png'
+            img: 'img/sadface.png'
         },
         {
             name: 'pregnant',
             url: 'audio/pregnant.mp3',
-            img:'img/pregnant.png'
+            img: 'img/pregnant.png'
         },
         {
             name: 'jesu',
             url: 'audio/jesu.mp3',
-            img:'img/church.png'
+            img: 'img/church.png'
         },
         {
             name: 'o ja mi lara',
             url: 'audio/jamilaraje.mp3',
-            img:'img/runningman.png'
+            img: 'img/runningman.png'
         },
         {
             name: 'whollup',
             url: 'audio/whollup.mp3',
-            img:'img/angryface.png'
+            img: 'img/angryface.png'
         },
         {
             name: 'gerrarhia',
             url: 'audio/gerrarhia.mp3',
-            img:'img/rollingeyes.png'
+            img: 'img/rollingeyes.png'
         },
         {
             name: 'whip',
             url: 'audio/whip.mp3',
-            img:'img/sadface.png'
-        }
+            img: 'img/sadface.png'
+        },
+        {
+            name: 'ajekun iya',
+            url: 'audio/ajekuniya.mp3',
+            img: 'img/closedeyelaugh.png'
+        },
+        {
+            name: 'continue',
+            url: 'audio/continue.mp3',
+            img: 'img/grinningface.png'
+        },
+        {
+            name: 'hexperedit',
+            url: 'audio/hexperredit.mp3',
+            img: 'img/grinningface.png'
+        },
+        {
+            name: 'ww dot',
+            url: 'audio/nscdc.mp3',
+            img: 'img/cryinglaugh.png'
+        },
+        {
+            name: 'oga at the top',
+            url: 'audio/ogaatthetop.mp3',
+            img: 'img/closedeyelaugh.png'
+        },
+        {
+            name: 'omo re',
+            url: 'audio/omorebicustard.mp3',
+            img: 'img/grinningface.png'
+        },
+        {
+            name: 'wi you keep quiet',
+            url: 'audio/quiet.mp3',
+            img: 'img/rollingeyes.png'
+        },
+        {
+            name: 'waka come',
+            url: 'audio/wakacome.mp3',
+            img: 'img/cryinglaugh.png'
+        },
     ];
 
     $scope.play = function (url) {
