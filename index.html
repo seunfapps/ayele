@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script>
+        var myApp = angular.module('myApp', []);
+        myApp.controller('ctrl', function ($scope) {
+            $scope.playlists = [
+                {
+                    name: 'aye le',
+                    url: 'audio/ayele.mp3'
+                },
+                {
+                    name: 'chai',
+                    url: 'audio/chai.mp3'
+                }, {
+                    name: 'apostle',
+                    url: 'audio/apostle.mp3'
+                }, {
+                    name: 'jiya',
+                    url: 'audio/jiya.mp3'
+                }, {
+                    name: 'lord',
+                    url: 'audio/lord.mp3'
+                }, {
+                    name: 'funke',
+                    url: 'audio/funke.mp3'
+                },
+                {
+                    name: 'aye mi',
+                    url: 'audio/ayemi.mp3'
+                },
+                {
+                    name: 'pregnant',
+                    url: 'audio/pregnant.mp3'
+                },
+                 {
+                    name: 'jesu',
+                    url: 'audio/jesu.mp3'
+                },
+                 {
+                    name: 'o ja mi lara',
+                    url: 'audio/jamilaraje.mp3'
+                },
+                {
+                    name: 'whollup',
+                    url: 'audio/whollup.mp3'
+                },
+                {
+                    name: 'gerrarhia',
+                    url: 'audio/gerrarhia.mp3'
+                },
+                 {
+                    name: 'whip',
+                    url: 'audio/whip.mp3'
+                }
+            ];
+
+            $scope.play = function (url) {
+                var audio = new Audio(url);
+                audio.play();
+            };
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" style="margin-top: 20px">
+            <div class="col-md-6 col-md-offset-3">
+                <div ng-app='myApp' ng-controller="ctrl">
+                    <button class="btn btn-default btn-large" ng-repeat="playlist in playlists" ng-click="play(playlist.url)">{{playlist.name}}</button>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
