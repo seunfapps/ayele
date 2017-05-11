@@ -6,6 +6,7 @@
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
+        <link rel="stylesheet" href="css/styles.css">
     <script>
         var myApp = angular.module('myApp', []);
         myApp.controller('ctrl', function ($scope) {
@@ -73,8 +74,26 @@
     <div class="container">
         <div class="row" style="margin-top: 20px">
             <div class="col-md-6 col-md-offset-3">
+                <div class="top-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor.
+                </div>
                 <div ng-app='myApp' ng-controller="ctrl">
-                    <button class="btn btn-default btn-large" ng-repeat="playlist in playlists" ng-click="play(playlist.url)">{{playlist.name}}</button>
+                    <ul>
+                        <li ng-repeat="playlist in playlists" ng-click="play(playlist.url)">
+                            <a href="business-list.html" class="">
+                                <div class="main-content-card">
+                                    <div class="content-card-image">
+                                        <img src="/img/new-mobile/svg/list.svg" alt="">
+                                    </div>
+                                    <div class="content-card-name">
+                                        {{playlist.name}}
+                                    </div>
+                                </div>
+                            </a>
+                        </li>            
+                    </ul>
+                    <!--<button class="btn btn-default btn-large" ng-repeat="playlist in playlists" ng-click="play(playlist.url)">{{playlist.name}}</button>-->
                 </div>  
             </div>
         </div>
