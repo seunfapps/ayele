@@ -6,7 +6,19 @@
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-    <script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" style="margin-top: 20px">
+            <div class="col-md-6 col-md-offset-3">
+                <div ng-app='myApp' ng-controller="ctrl">
+                    <button class="btn btn-default btn-large" ng-repeat="playlist in playlists" ng-click="play(playlist.url)">{{playlist.name}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <script>
         var myApp = angular.module('myApp', []);
         myApp.controller('ctrl', function ($scope) {
             $scope.playlists = [
@@ -66,18 +78,5 @@
             };
         });
     </script>
-
-</head>
-
-<body>
-    <div class="container">
-        <div class="row" style="margin-top: 20px">
-            <div class="col-md-6 col-md-offset-3">
-                <div ng-app='myApp' ng-controller="ctrl">
-                    <button class="btn btn-default btn-large" ng-repeat="playlist in playlists" ng-click="play(playlist.url)">{{playlist.name}}</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 </html>
