@@ -6,12 +6,16 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 .container {
-	padding: 70px 0;
+	padding: 50px 0;
 }
 
 .top-text {
 	font-size: 25px;
 	margin-bottom: 45px;
+}
+
+.top-text img {
+	width: 100px;
 }
 
 .main-content-section {
