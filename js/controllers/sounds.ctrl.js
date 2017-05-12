@@ -18,7 +18,7 @@ myApp.controller('ctrl', function ($scope) {
             url: 'audio/jiya.mp3',
             img: 'img/closedeyelaugh.png'
         }, {
-            name: 'lord',
+            name: 'jesus is lord',
             url: 'audio/lord.mp3',
             img: 'img/grinningface.png'
         }, {
@@ -42,7 +42,7 @@ myApp.controller('ctrl', function ($scope) {
             img: 'img/church.png'
         },
         {
-            name: 'o ja mi lara',
+            name: 'o ja mi lara je',
             url: 'audio/jamilaraje.mp3',
             img: 'img/runningman.png'
         },
@@ -52,7 +52,7 @@ myApp.controller('ctrl', function ($scope) {
             img: 'img/angryface.png'
         },
         {
-            name: 'gerrarhia',
+            name: 'gerrarahia',
             url: 'audio/gerrarhia.mp3',
             img: 'img/rollingeyes.png'
         },
@@ -77,8 +77,8 @@ myApp.controller('ctrl', function ($scope) {
             img: 'img/grinningface.png'
         },
         {
-            name: 'ww dot',
-            url: 'audio/nscdc.mp3',
+            name: 'daz all',
+            url: 'audio/dazall.mp3',
             img: 'img/cryinglaugh.png'
         },
         {
@@ -87,12 +87,12 @@ myApp.controller('ctrl', function ($scope) {
             img: 'img/closedeyelaugh.png'
         },
         {
-            name: 'omo re',
+            name: 'omo re bi custard',
             url: 'audio/omorebicustard.mp3',
             img: 'img/grinningface.png'
         },
         {
-            name: 'wi you keep quiet',
+            name: 'will you keep quiet',
             url: 'audio/quiet.mp3',
             img: 'img/rollingeyes.png'
         },
