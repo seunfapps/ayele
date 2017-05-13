@@ -103,6 +103,8 @@ myApp.controller('ctrl', function ($scope) {
         },
     ];
 
+    $scope.paginatedPlaylists = $scope.playlists.paginate(9);
+
     $scope.play = function (url) {
         var audio = new Audio(url);
         audio.play();
