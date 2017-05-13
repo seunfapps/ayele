@@ -7,6 +7,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/ripple.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut favicon" href="img/logo.png" type="image/png">
     <title>Ayele</title>
     <meta name="fragment" content="!">
     <meta name="description" content="Play Nigerian sound memes like 'Ayele o' and 'chai' on your browser with an easy-to-use web app. Built with love by Faffers!" />
@@ -38,17 +39,18 @@
                 <div ng-app='myApp' ng-controller="ctrl">
                     <div class="row no-margin-right">
                         <ul>
-                            <li ng-repeat="playlist in playlists" ng-click="play(playlist.url)" class="col-lg-2 col-md-3 col-xs-4">
-                                <a href="#!" class="ripple">
+                            <li ng-repeat="audio in playlists" ng-click="audio.play()" class="col-lg-2 col-md-3 col-xs-4">
+                                <a href="#!" class="ripple" ng-class="{ 'shake': audio.playing }">
                                     <div class="main-content-card">
                                         <div class="content-card-image">
-                                            <img ng-src="{{playlist.img}}" alt="">
+                                            <img src="img/speaker.png" class="speaker" ng-if="audio.playing" >
+                                            <img ng-src="{{audio.img}}" alt="{{audio.name}}">
                                         </div>
-                                        <div class="content-card-name hidden-xs" ng-bind="playlist.name"></div>
+                                        <div class="content-card-name hidden-xs" ng-bind="audio.name"></div>
                                         <div class="visible-xs">
-                                            <div class="content-card-name" ng-if="playlist.name.length < 11" ng-bind="playlist.name"></div>
-                                            <div class="content-card-name" ng-if="playlist.name.length > 10">
-                                                <marquee scrollamount="2"><span ng-bind="playlist.name"></span></marquee>
+                                            <div class="content-card-name" ng-if="audio.name.length < 11" ng-bind="audio.name"></div>
+                                            <div class="content-card-name" ng-if="audio.name.length > 10">
+                                                <marquee scrollamount="2"><span ng-bind="audio.name"></span></marquee>
                                             </div>
                                         </div>
                                     </div>
