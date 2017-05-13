@@ -2,8 +2,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="css/ripple.css">
     <link rel="stylesheet" href="css/styles.css">
     <title>Ayele</title>
     <meta name="fragment" content="!">
@@ -27,25 +29,33 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row no-margin">
             <div class="col-md-10 col-md-offset-1">
                 <div class="top-text">
                     <img src="img/logo.png" alt="">
                     <!--Ayele!-->
                 </div>
                 <div ng-app='myApp' ng-controller="ctrl">
-                    <ul>
-                        <li ng-repeat="playlist in playlists" ng-click="play(playlist.url)">
-                            <a href="#!" class="">
-                                <div class="main-content-card">
-                                    <div class="content-card-image">
-                                        <img ng-src="{{playlist.img}}" alt="">
+                    <div class="row no-margin-right">
+                        <ul>
+                            <li ng-repeat="playlist in playlists" ng-click="play(playlist.url)" class="col-lg-2 col-md-3 col-xs-4">
+                                <a href="#!" class="ripple">
+                                    <div class="main-content-card">
+                                        <div class="content-card-image">
+                                            <img ng-src="{{playlist.img}}" alt="">
+                                        </div>
+                                        <div class="content-card-name hidden-xs" ng-bind="playlist.name"></div>
+                                        <div class="visible-xs">
+                                            <div class="content-card-name" ng-if="playlist.name.length < 11" ng-bind="playlist.name"></div>
+                                            <div class="content-card-name" ng-if="playlist.name.length > 10">
+                                                <marquee scrollamount="2"><span ng-bind="playlist.name"></span></marquee>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="content-card-name" ng-bind="playlist.name"></div>
-                                </div>
-                            </a>
-                        </li>            
-                    </ul>
+                                </a>
+                            </li>            
+                        </ul>
+                    </div>
                     <!--<button class="btn btn-default btn-large" ng-repeat="playlist in playlists" ng-click="play(playlist.url)">{{playlist.name}}</button>-->
                 </div>  
             </div>
