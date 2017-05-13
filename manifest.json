@@ -10,7 +10,7 @@
   },
   "icons": { 
     "48": "img/icons/drawable-48-icon.png",
-    "128": "img/icons/drawable-48-icon.png" 
+    "128": "img/icons/drawable-128-icon.png" 
   },
   "permissions": [
     "activeTab",
