@@ -43,13 +43,13 @@
                                 <a href="#!" class="ripple" ng-class="{ 'shake': audio.playing }">
                                     <div class="main-content-card">
                                         <div class="content-card-image">
-                                            <img src="img/speaker.png" class="speaker" ng-if="audio.playing" >
+                                            <img src="img/speaker.gif" class="speaker" ng-if="audio.playing" >
                                             <img ng-src="{{audio.img}}" alt="{{audio.name}}">
                                         </div>
                                         <div class="content-card-name hidden-xs" ng-bind="audio.name"></div>
                                         <div class="visible-xs">
-                                            <div class="content-card-name" ng-if="audio.name.length < 11" ng-bind="audio.name"></div>
-                                            <div class="content-card-name" ng-if="audio.name.length > 10">
+                                            <div class="content-card-name" ng-if="audio.name.length < 9" ng-bind="audio.name"></div>
+                                            <div class="content-card-name" ng-if="audio.name.length > 8">
                                                 <marquee scrollamount="2"><span ng-bind="audio.name"></span></marquee>
                                             </div>
                                         </div>
