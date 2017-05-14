@@ -100,11 +100,27 @@ myApp.controller('ctrl', function ($scope) {
             name: 'waka come',
             url: 'audio/wakacome.mp3',
             img: 'img/cryinglaugh.png'
-        },
+        }
     ];
+
+    $scope.playlists.forEach(function (audio) {
+        audio.play = function () {
+            if (!audio.elem) {
+                audio.elem = new Audio(audio.url);
+                audio.elem.onended = function () {
+                    audio.playing = false;
+                    $scope.$applyAsync();
+                }
+            }
+            audio.playing = true;
+            audio.elem.currentTime = 0;
+            audio.elem.play();
+        }
+    })
 
     $scope.play = function (url) {
         var audio = new Audio(url);
+        
         audio.play();
     };
 });

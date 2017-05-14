@@ -2,12 +2,15 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="css/ripple.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut favicon" href="img/logo.png" type="image/png">
     <title>Ayele</title>
     <meta name="fragment" content="!">
-    <meta name="description" content="Nigerian sound memes playable on the browser as an extension" />
+    <meta name="description" content="Play Nigerian sound memes like 'Ayele o' and 'chai' on your browser with an easy-to-use web app. Built with love by Faffers!" />
     <meta name="author" content="Faffers!">
     <meta name="keywords" content="Ayele,Memes,Nigerian,Sounds,Browser,Javascript">
     <link rel="canonical" href="https://seunsaber.github.io/ayele" />
@@ -27,25 +30,34 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
+        <div class="row no-margin">
             <div class="col-md-10 col-md-offset-1">
                 <div class="top-text">
                     <img src="img/logo.png" alt="">
                     <!--Ayele!-->
                 </div>
                 <div ng-app='myApp' ng-controller="ctrl">
-                    <ul>
-                        <li ng-repeat="playlist in playlists" ng-click="play(playlist.url)">
-                            <a href="#!" class="">
-                                <div class="main-content-card">
-                                    <div class="content-card-image">
-                                        <img ng-src="{{playlist.img}}" alt="">
+                    <div class="row no-margin-right">
+                        <ul>
+                            <li ng-repeat="audio in playlists" ng-click="audio.play()" class="col-lg-2 col-md-3 col-xs-4">
+                                <a href="#!" class="ripple" ng-class="{ 'shake': audio.playing }">
+                                    <div class="main-content-card">
+                                        <div class="content-card-image">
+                                            <img src="img/speaker.gif" class="speaker" ng-if="audio.playing" >
+                                            <img ng-src="{{audio.img}}" alt="{{audio.name}}">
+                                        </div>
+                                        <div class="content-card-name hidden-xs" ng-bind="audio.name"></div>
+                                        <div class="visible-xs">
+                                            <div class="content-card-name" ng-if="audio.name.length < 9" ng-bind="audio.name"></div>
+                                            <div class="content-card-name" ng-if="audio.name.length > 8">
+                                                <marquee scrollamount="2"><span ng-bind="audio.name"></span></marquee>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="content-card-name" ng-bind="playlist.name"></div>
-                                </div>
-                            </a>
-                        </li>            
-                    </ul>
+                                </a>
+                            </li>            
+                        </ul>
+                    </div>
                     <!--<button class="btn btn-default btn-large" ng-repeat="playlist in playlists" ng-click="play(playlist.url)">{{playlist.name}}</button>-->
                 </div>  
             </div>

@@ -3,8 +3,13 @@ body {
 	background-color: #DFDBE5;
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 	text-align: center;
+	display: block;
+	width: 100%;
+	overflow-x: hidden;
 }
-
+.no-margin {
+	margin: 0;
+}
 .container {
 	padding: 50px 0;
 }
@@ -70,4 +75,54 @@ a:hover {
 	font-size: 10px;
 	text-transform: uppercase;
 	margin-top: 10px;
+}
+
+.speaker {
+	position: absolute;
+    right: 6px;
+    top: 4px;
+	width: 20px;
+}
+
+.shake img {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@media (max-width: 760px) {
+	.row .col-xs-4 {
+		padding-right: 0;
+	}
+	.main-content-card {
+		height: auto;
+	}
+	.no-margin-right {
+		margin-right: 0;
+	}
+	.speaker {
+		position: absolute;
+		right: 0px;
+		top: 4px;
+		width: 20px;
+	}
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
