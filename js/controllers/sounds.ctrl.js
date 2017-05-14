@@ -13,6 +13,11 @@ myApp.controller('ctrl', function ($scope) {
             name: 'apostle',
             url: 'audio/apostle.mp3',
             img: 'img/cryinglaugh.png'
+        },
+        {
+            name: 'super story',
+            url: 'audio/superstory.mp3',
+            img: 'img/rollingeyes.png'
         }, {
             name: 'jiya',
             url: 'audio/jiya.mp3',
