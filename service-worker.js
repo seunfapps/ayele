@@ -1,12 +1,20 @@
-var CACHE_VERSION = 1;
+var CACHE_VERSION = 1.01;
 var CURRENT_CACHES = {
-  prefetch: 'prefetch-cache-v' + CACHE_VERSION
+  prefetch: 'prefetch-cache-v' + CACHE_VERSION,
+  postfetch: 'postfetch-cache-v' + CACHE_VERSION
 };
+
+var cacheRequestCondition = function (requestUrl, response) {
+  return requestUrl.indexOf("audio/") > 0 ||
+        requestUrl.indexOf("img/") > 0 || 
+        requestUrl.indexOf("js/") > 0 || 
+        requestUrl.indexOf("css/") > 0;
+}
 
 self.addEventListener('install', function(event) {
   var now = Date.now();
 
-  var urlsToPrefetch = ["audio/ayele.mp3","audio/chai.mp3","audio/apostle.mp3","audio/jiya.mp3","audio/lord.mp3","audio/funke.mp3","audio/ayemi.mp3","audio/pregnant.mp3","audio/jesu.mp3","audio/jamilaraje.mp3","audio/whollup.mp3","audio/gerrarhia.mp3","audio/whip.mp3","audio/ajekuniya.mp3","audio/continue.mp3","audio/hexperredit.mp3","audio/dazall.mp3","audio/ogaatthetop.mp3","audio/omorebicustard.mp3","audio/quiet.mp3","audio/wakacome.mp3","img/cryinglaugh.png","img/loudcryinglaugh.png","img/cryinglaugh.png","img/closedeyelaugh.png","img/grinningface.png","img/rollingeyes.png","img/sadface.png","img/pregnant.png","img/church.png","img/runningman.png","img/angryface.png","img/rollingeyes.png","img/sadface.png","img/closedeyelaugh.png","img/grinningface.png","img/grinningface.png","img/cryinglaugh.png","img/closedeyelaugh.png","img/grinningface.png","img/rollingeyes.png","img/cryinglaugh.png"];
+  var urlsToPrefetch = ["index.html"];
 
   console.log('Handling install event. Resources to prefetch:', urlsToPrefetch);
 
@@ -74,7 +82,15 @@ self.addEventListener('fetch', function(event) {
 
       return fetch(event.request).then(function(response) {
         console.log('Response from network is:', response);
-
+        if (cacheRequestCondition(event.request.url)) {
+          var responseClone = response.clone();
+          caches.open(CURRENT_CACHES.postfetch).then(function (cache) {
+            cache.put(event.request, responseClone);
+            console.log("Request Match Found! Caching the response to", event.request.url);
+          }).catch(function (err) {
+            console.error("Could not open cache for postfetch", err);
+          })
+        }
         return response;
       }).catch(function(error) {
         console.error('Fetching failed:', error);
