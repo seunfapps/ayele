@@ -5,6 +5,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 	text-align: center;
 	display: block;
 	width: 100%;
+	overflow-x: hidden;
 }
 .no-margin {
 	margin: 0;
@@ -76,6 +77,20 @@ a:hover {
 	margin-top: 10px;
 }
 
+.speaker {
+	position: absolute;
+    right: 6px;
+    top: 4px;
+	width: 20px;
+}
+
+.shake img {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
 @media (max-width: 760px) {
 	.row .col-xs-4 {
 		padding-right: 0;
@@ -86,19 +101,12 @@ a:hover {
 	.no-margin-right {
 		margin-right: 0;
 	}
-}
-
-.speaker {
-	position: absolute;
-    right: 6px;
-    top: 4px;
-}
-
-.shake img {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
+	.speaker {
+		position: absolute;
+		right: 0px;
+		top: 4px;
+		width: 20px;
+	}
 }
 
 @keyframes shake {
