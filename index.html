@@ -27,6 +27,14 @@
     <meta name="twitter:description" content="Nigerian sound memes playable on the browser as an extension" />
     <meta name="twitter:image" content="" />
     <meta name="twitter:url" content="https://seunsaber.github.io/ayele" />
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js', {scope: './'})
+          .catch(function(error) {
+            console.error("something went wrong with the service-worker installation", error);
+          });
+      }
+    </script>
 </head>
 <body>
     <div class="container">
