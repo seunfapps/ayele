@@ -14,7 +14,7 @@ var cacheRequestCondition = function (requestUrl, response) {
 self.addEventListener('install', function(event) {
   var now = Date.now();
 
-  var urlsToPrefetch = ["index.html"];
+  var urlsToPrefetch = ["/", "index.html"];
 
   console.log('Handling install event. Resources to prefetch:', urlsToPrefetch);
 
