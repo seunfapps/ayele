@@ -2,38 +2,38 @@
   "name": "Ayele!",
   "icons": [
     {
-      "src": "img/drawable-36-icon.png",
+      "src": "img/icons/drawable-36-icon.png",
       "sizes": "36x36",
       "type": "image/png"
     },
     {
-      "src": "img/drawable-48-icon.png",
+      "src": "img/icons/drawable-48-icon.png",
       "sizes": "48x48",
       "type": "image/png"
     },
     {
-      "src": "img/drawable-72-icon.png",
+      "src": "img/icons/drawable-72-icon.png",
       "sizes": "72x72",
       "type": "image/png"
     },
     {
-      "src": "img/drawable-96-icon.png",
+      "src": "img/icons/drawable-96-icon.png",
       "sizes": "96x96",
       "type": "image/png"
     },
     {
-      "src": "img/drawable-144-icon.png",
+      "src": "img/icons/drawable-144-icon.png",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "img/drawable-192-icon.png",
+      "src": "img/icons/drawable-192-icon.png",
       "sizes": "192x192",
       "type": "image/png"
     }
   ],
   "theme_color": "#9E9E9E",
-  "background_color": "#9E9E9E",
+  "background_color": "#FFF",
   "start_url": "index.html",
   "display": "standalone",
   "orientation": "portrait"
