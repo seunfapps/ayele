@@ -4,8 +4,7 @@ logs
 npm-debug.log*
 
 # windows stuff
-img/Thumbs.db
-img/icons/Thumbs.db
+/**/Thumbs.db
 
 # Runtime data
 pids

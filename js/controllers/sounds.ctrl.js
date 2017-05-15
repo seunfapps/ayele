@@ -39,7 +39,7 @@ myApp.controller('ctrl', function ($scope) {
         {
             name: 'pregnant',
             url: 'audio/pregnant.mp3',
-            img: 'img/smilingblush.png'
+            img: 'img/pregnant.png'
         },
         {
             name: 'jesu',
