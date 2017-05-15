@@ -55,19 +55,25 @@ a:hover {
 	/*border: 1px solid #111;*/
 	padding: 12px;
 	text-align: center;
-	display: table-cell;
+	display: inline-block;
 	vertical-align: middle;
-	width: 175px;
+	width: 140px;
+	margin-bottom: 4px;
 }
 
 .content-card-image {
 	width: 35px;
 	margin: 0 auto;
 	margin-bottom: 5px;
+	margin-top: 15px;
 }
 
 .content-card-name {
 	font-size: 10px;
 	text-transform: uppercase;
 	margin-top: 10px;
+}
+
+.carousel-control.right,.carousel-control.left {
+	background: none;
 }
