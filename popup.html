@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/ripple.css" rel="stylesheet">
     <title>Ayele</title>
     <style type="text/css">
         body {
@@ -20,7 +21,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="top-text">
-                    <img src="img/icons/drawable-xxxhdpi-icon.png" alt="">
+                    <img src="img/logo.png" alt="">
                     <!--Ayele!-->
                 </div>
                 <div ng-app='myApp' ng-controller="ctrl">
@@ -28,9 +29,10 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div ng-repeat="playlist in paginatedPlaylists" class="item" ng-class="{ 'active': $first }">
-                                <a href="#!" ng-repeat="audio in playlist" ng-click="play(audio.url)">
-                                    <div class="main-content-card">
+                                <a href="#!" ng-repeat="audio in playlist" ng-click="audio.play()" ng-class="{ 'shake': audio.playing }">
+                                    <div class="main-content-card ripple">
                                         <div class="content-card-image">
+                                            <img src="img/speaker.gif" class="speaker" ng-if="audio.playing" >
                                             <img ng-src="{{audio.img}}" alt="">
                                         </div>
                                         <div class="content-card-name" ng-bind="audio.name"></div>

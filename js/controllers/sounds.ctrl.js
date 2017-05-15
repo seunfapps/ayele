@@ -108,6 +108,21 @@ myApp.controller('ctrl', function ($scope) {
         }
     ];
 
+    $scope.playlists.forEach(function (audio) {
+        audio.play = function () {
+            if (!audio.elem) {
+                audio.elem = new Audio(audio.url);
+                audio.elem.onended = function () {
+                    audio.playing = false;
+                    $scope.$applyAsync();
+                }
+            }
+            audio.playing = true;
+            audio.elem.currentTime = 0;
+            audio.elem.play();
+        }
+    })
+
     $scope.paginatedPlaylists = $scope.playlists.paginate(12);
 
     $scope.play = function (url) {
