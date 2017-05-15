@@ -33,7 +33,10 @@ self.addEventListener('install', function(event) {
           }
 
           // Use the original URL without the cache-busting parameter as the key for cache.put().
-          if (urlsToPrefetch == "index.html") cache.put("/", response.clone());
+          if (urlsToPrefetch == "index.html") {
+            if (location.href.indexOf("github.io") > 0) cache.put("/ayele/", response.clone());
+            else cache.put("/", response.clone());
+          }
           return cache.put(urlToPrefetch, response);
         }).catch(function(error) {
           console.error('Not caching ' + urlToPrefetch + ' due to ' + error);
