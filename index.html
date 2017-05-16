@@ -46,9 +46,12 @@
                     <!--Ayele!-->
                 </div>
                 <div ng-app='myApp' ng-controller="ctrl">
+                <div>
+                        <input type="search" class="" ng-model="search">
+</div>
                     <div class="row no-margin-right">
                         <ul>
-                            <li ng-repeat="audio in playlists" ng-click="audio.play()" class="col-lg-2 col-md-3 col-xs-4">
+                            <li ng-repeat="audio in playlists | filter:search" ng-click="audio.play()" class="col-lg-2 col-md-3 col-xs-4">
                                 <a href="#!" class="ripple" ng-class="{ 'shake': audio.playing }">
                                     <div class="main-content-card">
                                         <div class="content-card-image">
