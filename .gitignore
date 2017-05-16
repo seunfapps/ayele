@@ -3,6 +3,9 @@ logs
 *.log
 npm-debug.log*
 
+# windows stuff
+/**/Thumbs.db
+
 # Runtime data
 pids
 *.pid
