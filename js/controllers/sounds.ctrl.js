@@ -1,131 +1,30 @@
-myApp.controller('ctrl', function ($scope) {
-    $scope.playlists = [
-        {
-            name: 'aye le',
-            url: 'audio/ayele.mp3',
-            img: 'img/cryinglaugh.png'
-        },
-        {
-            name: 'chai',
-            url: 'audio/chai.mp3',
-            img: 'img/loudcryinglaugh.png'
-        }, {
-            name: 'apostle',
-            url: 'audio/apostle.mp3',
-            img: 'img/closedeyelaugh.png'
-        },
-        {
-            name: 'super story',
-            url: 'audio/superstory.mp3',
-            img: 'img/coolface.png'
-        }, {
-            name: 'jiya',
-            url: 'audio/jiya.mp3',
-            img: 'img/tongueoutnoeye.png'
-        }, {
-            name: 'jesus is lord',
-            url: 'audio/lord.mp3',
-            img: 'img/grinningface.png'
-        }, {
-            name: 'funke',
-            url: 'audio/funke.mp3',
-            img: 'img/closedeyelaugh.png'
-        },
-        {
-            name: 'aye mi',
-            url: 'audio/ayemi.mp3',
-            img: 'img/sadface.png'
-        },
-        {
-            name: 'pregnant',
-            url: 'audio/pregnant.mp3',
-            img: 'img/pregnant.png'
-        },
-        {
-            name: 'jesu',
-            url: 'audio/jesu.mp3',
-            img: 'img/grinningface.png'
-        },
-        {
-            name: 'o ja mi lara je',
-            url: 'audio/jamilaraje.mp3',
-            img: 'img/laughingsweat.png'
-        },
-        {
-            name: 'whollup',
-            url: 'audio/whollup.mp3',
-            img: 'img/angryface.png'
-        },
-        {
-            name: 'gerrarahia',
-            url: 'audio/gerrarhia.mp3',
-            img: 'img/rollingeyes.png'
-        },
-        {
-            name: 'whip',
-            url: 'audio/whip.mp3',
-            img: 'img/laughingsweat.png'
-        },
-        {
-            name: 'ajekun iya',
-            url: 'audio/ajekuniya.mp3',
-            img: 'img/laughingclosedeyes.png'
-        },
-        {
-            name: 'continue',
-            url: 'audio/continue.mp3',
-            img: 'img/thumbsup.png'
-        },
-        {
-            name: 'hexperedit',
-            url: 'audio/hexperredit.mp3',
-            img: 'img/grinningface.png'
-        },
-        {
-            name: 'daz all',
-            url: 'audio/dazall.mp3',
-            img: 'img/sideeye.png'
-        },
-        {
-            name: 'oga at the top',
-            url: 'audio/ogaatthetop.mp3',
-            img: 'img/closedeyelaugh.png'
-        },
-        {
-            name: 'omo re bi custard',
-            url: 'audio/omorebicustard.mp3',
-            img: 'img/tongueoutoneeye.png'
-        },
-        {
-            name: 'will you keep quiet',
-            url: 'audio/quiet.mp3',
-            img: 'img/unamused.png'
-        },
-        {
-            name: 'waka come',
-            url: 'audio/wakacome.mp3',
-            img: 'img/cryinglaugh.png'
-        }
-    ];
-
-    $scope.playlists.forEach(function (audio) {
-        audio.play = function () {
-            if (!audio.elem) {
-                audio.elem = new Audio(audio.url);
-                audio.elem.onended = function () {
-                    audio.playing = false;
-                    $scope.$applyAsync();
-                }
-            }
-            audio.playing = true;
-            audio.elem.currentTime = 0;
-            audio.elem.play();
-        }
-    })
+myApp.controller('ctrl', function ($scope, $http) {
+    $scope.playlists = [];
 
     $scope.play = function (url) {
         var audio = new Audio(url);
-        
         audio.play();
     };
+
+    $http.get("data/sounds.json").then(function (sounds) {
+        if (Array.isArray(sounds.data)) {
+            $scope.playlists = sounds.data;
+            $scope.playlists.forEach(function (audio) {
+                audio.play = function () {
+                    if (!audio.elem) {
+                        audio.elem = new Audio(audio.url);
+                        audio.elem.onended = function () {
+                            audio.playing = false;
+                            $scope.$applyAsync();
+                        }
+                    }
+                    audio.playing = true;
+                    audio.elem.currentTime = 0;
+                    audio.elem.play();
+                }
+            })
+        }
+    }).catch(function (err) {
+        console.error("error loading sounds", err);
+    })
 });
