@@ -1,4 +1,4 @@
-var CACHE_VERSION = 1.03;
+var CACHE_VERSION = 1.05;
 var CURRENT_CACHES = {
   prefetch: 'prefetch-cache-v' + CACHE_VERSION,
   postfetch: 'postfetch-cache-v' + CACHE_VERSION
@@ -8,7 +8,8 @@ var cacheRequestCondition = function (requestUrl, response) {
   return requestUrl.indexOf("audio/") > 0 ||
         requestUrl.indexOf("img/") > 0 || 
         requestUrl.indexOf("js/") > 0 || 
-        requestUrl.indexOf("css/") > 0;
+        requestUrl.indexOf("css/") > 0 || 
+        requestUrl.indexOf(".json") > 0;
 }
 
 self.addEventListener('install', function(event) {
@@ -31,7 +32,6 @@ self.addEventListener('install', function(event) {
             throw new Error('request for ' + urlToPrefetch +
               ' failed with status ' + response.statusText);
           }
-
           // Use the original URL without the cache-busting parameter as the key for cache.put().
           if (urlsToPrefetch == "index.html") {
             if (location.href.indexOf("github.io") > 0) cache.put("/ayele/", response.clone());
@@ -79,10 +79,10 @@ self.addEventListener('fetch', function(event) {
       if (response) {
         console.log('Found response in cache:', response);
 
-        return response;
+        //return response;
       }
 
-      console.log('No response found in cache. About to fetch from network...');
+      //console.log('No response found in cache. About to fetch from network...');
 
       return fetch(event.request).then(function(response) {
         console.log('Response from network is:', response);
@@ -98,7 +98,8 @@ self.addEventListener('fetch', function(event) {
         return response;
       }).catch(function(error) {
         console.error('Fetching failed:', error);
-        throw error;
+        //throw error;
+        return response;
       });
     })
   );
