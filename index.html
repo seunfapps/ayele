@@ -30,7 +30,7 @@
     <link rel="manifest" href="manifest.json"> 
     <script>
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./service-worker.js', {scope: './'})
+        navigator.serviceWorker.register('./service-worker.js?v=1.05', {scope: './'})
           .catch(function(error) {
             console.error("something went wrong with the service-worker installation", error);
           });
@@ -54,6 +54,7 @@
                             <li ng-repeat="audio in playlists | filter:search" ng-click="audio.play()" class="col-lg-2 col-md-3 col-xs-4">
                                 <a href="#!" class="ripple" ng-class="{ 'shake': audio.playing }">
                                     <div class="main-content-card">
+                                        
                                         <div class="content-card-image">
                                             <img src="img/speaker.gif" class="speaker" ng-if="audio.playing" >
                                             <img ng-src="{{audio.img}}" ng-alt="{{audio.name}}">
