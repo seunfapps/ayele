@@ -116,9 +116,20 @@ a:hover {
 	margin-top: 10px;
 }
 
+.carousel-control.left {
+	margin-left: 36px;
+}
+
+.carousel-control.right {
+	margin-right: 36px;
+}
+
 .carousel-control.right,.carousel-control.left {
 	background: none;
-	color: black;
+    color: black;
+    width: 5px;
+    height: 100px;
+    margin-top: 100px;
 }
 
 .carousel-control.right span {
