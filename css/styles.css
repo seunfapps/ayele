@@ -2,11 +2,13 @@ body {
 	/*background-color: #fafafa;*/
 	/*background-color: #DFDBE5;*/
 	background-color: #2F1B41;
+	/*background-color: #dadfe1;*/
 	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 	text-align: center;
 	display: block;
 	width: 100%;
 	overflow-x: hidden;
+	color: #5c6a70;
 }
 .no-margin {
 	margin: 0;
@@ -18,6 +20,9 @@ body {
 	-webkit-transform:translate3d(0, 0, 0);
 	-ms-transform:translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
+	-ms-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
 	border-radius: 3px;
 }
 
@@ -54,7 +59,16 @@ body {
 
 .top-text {
 	font-size: 25px;
-	margin-bottom: 45px;
+	/*margin-bottom: 45px;*/
+}
+
+.content-credits {
+	font-size: 10px;
+	text-transform: uppercase;
+	/*color: #a5b1b6;*/
+	color: rgba(255, 255, 255, 0.5);
+	font-weight: 300;
+	letter-spacing: 2px;
 }
 
 .search-ayele {
@@ -62,28 +76,107 @@ body {
 	border: none;
 	border-radius: 3px;
 	padding: 12px;
-	width: 70%;
-	margin-bottom: 55px;
-	-ms-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
-	-webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
-	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+	width: 100%;
+	/*margin-bottom: 15px;*/
+	-ms-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
 	font-size: 12px;
 }
 
-/* Medium devices (desktops, 992px and up) */
-@media only screen and (min-width: 900px) {
-	.search-ayele {
-		width: 40%;
-	}
+.left-content {
+	padding-top: 90px;
+	text-align: left;
+}
+
+.right-content {
+	padding-top: 50px;
 }
 
 .search-ayele:focus {
 	outline: none;
 }
 
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+	.left-content {
+		padding-top: 0;
+		text-align: center;
+	}
+	.line-bod {
+		margin: 0 auto;
+	}
+
+	.container {
+		padding: 25px 0;
+	}
+}
+
 
 .top-text img {
 	width: 150px;
+	/*border-bottom: 1px solid #fff;*/
+  /*padding-bottom: 25px;*/
+}
+
+.line-bod {
+	width: 150px;
+	height: 1px;
+  /*background: #c7ced1;*/
+	background: rgba(255, 255, 255, 0.5);
+	border-radius: 3px;
+	margin-bottom: 25px;
+	margin-top: 25px;
+}
+
+.line-bod.lk {
+	width: 70px;
+}
+
+.line-bod.sc {
+	width: 50px;
+}
+
+.content-tabs {
+	margin-top: 30px;
+}
+
+.content-tabs ul li {
+	display: block;
+	padding-bottom: 10px;
+}
+
+.content-tabs ul li:last-child {
+	padding-bottom: 0;
+}
+
+.content-tabs ul {
+	margin-bottom: 0;
+}
+
+.content-tabs ul li a {
+	/*display: block;*/
+	font-weight: 400;
+	/*color: #5c6a70;*/
+	transition: all .3s ease;
+	color: rgba(255, 255, 255, 0.6);
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 2px;
+}
+
+.content-tabs ul li a:hover {
+	color: #fff;
+}
+
+/*.content-tabs ul li a.active {
+	color: #fff;
+}*/
+
+.content-tabs-social ul li a {
+	font-weight: 400;
+	color: #5c6a70;
+	color: #fff;
 }
 
 .main-content-section {
@@ -100,7 +193,7 @@ li {
 	padding-bottom: 15px;
 }
 li a {
-	display: block;
+	/*display: block;*/
 	color: inherit;
 	font-weight: 600;
 	width: 100%;
@@ -111,22 +204,27 @@ img {
 	width: 35px;
 }
 
-a:hover {
+a:hover, a:focus {
 	text-decoration: none;
 }
 .main-content-card {
 	background-color: #fff;
 	height: 120px;
 	border-radius: 4px;
-	-ms-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
-	-webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
-	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+	-ms-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1);
 	/*border: 1px solid #111;*/
 	padding: 12px;
 	text-align: center;
 	display: table-cell;
 	vertical-align: middle;
-	width: 175px;
+	width: 100%;
+	/*width: 175px;*/
+}
+
+.main-content-card .content-card-name{
+	color: #5c6a70;
 }
 
 .content-card-image {
@@ -157,7 +255,117 @@ a:hover {
   perspective: 1000px;
 }
 
-@media (max-width: 760px) {
+.nav-tab>li.active>a, .nav-tab>li.active>a:focus, .nav-tab>li.active>a:hover {
+	color: #fff;
+}
+
+.js .inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+	max-width: 100%;
+	width: 100%;
+	font-size: 12px;
+	font-weight: 700;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	padding: 10px 20px;
+}
+
+.no-js .inputfile + label {
+	display: none;
+}
+
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+	outline: none;
+}
+
+.inputfile + label * {
+    /* pointer-events: none; */
+    /* in case of FastClick lib use */
+}
+
+.inputfile + label svg {
+	width: rem-calc(16);
+	height: rem-calc(16);
+	vertical-align: middle;
+	fill: currentColor;
+	margin-top: -4px;
+	margin-right: 4px;
+}
+
+
+.inputfile-2 + label {
+	color: #fff;
+	border: 1px solid currentColor;
+	border-radius: 3px;
+}
+
+.inputfile-2:focus + label,
+.inputfile-2.has-focus + label,
+.inputfile-2 + label:hover {
+	color: #fff;
+}
+
+
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+	.content-tabs ul li {
+		display: inline-block;
+		padding-bottom: 0;
+	}
+
+	.content-tabs ul li a {
+		font-size: 10px;
+	}
+
+	.nav-tab {
+		overflow-x: auto;
+		overflow-y: hidden;
+		white-space:nowrap;
+		border-bottom:none;
+	}
+
+
+	.nav-tab>li {
+		display:inline-block;
+		float:none;
+		padding: 0;
+		margin: 0 -3px;
+	}
+	.nav-tab>li>a {
+		border:none;
+		padding:10px 15px;
+		/*font-size:13px;*/
+		/*border-bottom:solid 2px #eee;*/
+	}
+	.nav-tab>li>a:focus, .nav-tab>li>a:hover {
+		background-color:transparent;
+		border-bottom:solid 2px #fff;
+	}
+	.nav-tab>li.active>a, .nav-tab>li.active>a:focus, .nav-tab>li.active>a:hover {
+		border:none;
+		background-color:transparent;
+		border-bottom:solid 2px #fff;
+	}
+	/*.search-ayele {
+		width: 100%;
+	}*/
+}
+
+
+@media (max-width: 768px) {
 	.row .col-xs-4 {
 		padding-right: 0;
 	}
@@ -172,6 +380,9 @@ a:hover {
 		right: 0px;
 		top: 4px;
 		width: 20px;
+	}
+	.top-text img {
+		width: 100px;
 	}
 }
 
