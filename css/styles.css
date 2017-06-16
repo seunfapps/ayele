@@ -110,6 +110,10 @@ body {
 	.container {
 		padding: 25px 0;
 	}
+
+	.right-content {
+		padding-top: 30px;
+	}
 }
 
 
