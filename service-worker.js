@@ -72,12 +72,12 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  console.log('Handling fetch event for', event.request.url);
+  //console.log('Handling fetch event for', event.request.url);
 
   event.respondWith(
     caches.match(event.request).then(function(response) {
       if (response) {
-        console.log('Found response in cache:', response);
+        //console.log('Found response in cache:', response);
 
         //return response;
       }
@@ -85,12 +85,12 @@ self.addEventListener('fetch', function(event) {
       //console.log('No response found in cache. About to fetch from network...');
 
       return fetch(event.request).then(function(response) {
-        console.log('Response from network is:', response);
+        //console.log('Response from network is:', response);
         if (cacheRequestCondition(event.request.url)) {
           var responseClone = response.clone();
           caches.open(CURRENT_CACHES.postfetch).then(function (cache) {
             cache.put(event.request, responseClone);
-            console.log("Request Match Found! Caching the response to", event.request.url);
+            //console.log("Request Match Found! Caching the response to", event.request.url);
           }).catch(function (err) {
             console.error("Could not open cache for postfetch", err);
           })
