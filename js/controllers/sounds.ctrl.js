@@ -1,6 +1,6 @@
-myApp.controller('ctrl', function ($scope, $http) {
+myApp.controller('ctrl', function ($scope, $http, $state) {
     $scope.playlists = [];
-
+    $scope.$state = $state;
     $scope.play = function (url) {
         var audio = new Audio(url);
         audio.play();
