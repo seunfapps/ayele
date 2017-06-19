@@ -103,6 +103,30 @@ myApp.factory("FileSystemFactory", function () {
                 });
             }
             else throw new Error("$fs should not be null");
+        },
+        convertToBlob: function (b64Data, contentType, sliceSize) {
+            contentType = contentType || 'audio/mp3';
+            sliceSize = sliceSize || 512;
+            b64Data = b64Data || "";
+
+            var byteCharacters = atob(b64Data.substring(b64Data.indexOf(',') + 1));
+            var byteArrays = [];
+
+            for (var offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+                var slice = byteCharacters.slice(offset, offset + sliceSize);
+
+                var byteNumbers = new Array(slice.length);
+                for (var i = 0; i < slice.length; i++) {
+                    byteNumbers[i] = slice.charCodeAt(i);
+                }
+
+                var byteArray = new Uint8Array(byteNumbers);
+
+                byteArrays.push(byteArray);
+            }
+
+            var blob = new Blob(byteArrays, { type: contentType });
+            return blob;
         }
     }
 });

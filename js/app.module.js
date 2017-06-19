@@ -12,6 +12,7 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         })
         .state('my-memes', {
             url: '/my-memes',
+            controller: 'MyMemesCtrl',
             templateUrl: rootUrl('partials/my-memes.html')
         });
 

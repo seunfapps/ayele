@@ -29,6 +29,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/notify.css">
     <link rel="shortcut favicon" href="img/favicon.png" type="image/png">
     <link rel="manifest" href="manifest.json">
     <base href="/" />
@@ -49,7 +50,7 @@
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4 col-md-offset-0 col-md-3 left-content">
                     <div class="top-text">
-                        <img src="img/ayele-logo.png" alt="">
+                        <a ui-sref="featured-memes"><img src="img/ayele-logo.png" alt=""></a>
                         <!--Ayele!-->
                         <!--<div>
                             Ayele, Nigeria’s first audio meme
@@ -80,8 +81,10 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset col-md-8 col-md-offset-1 right-content">
+                    <!--Body-->
                     <div ui-view></div>
-                    <!--<button class="btn btn-default btn-large" ng-repeat="playlist in playlists" ng-click="play(playlist.url)">{{playlist.name}}</button>-->
+                    <!--End Body-->
+                    <!--Footer-->
                     <div class="hidden-md hidden-lg">
                         <div class="line-bod sc"></div>
                         <div class="content-tabs-social">
@@ -94,57 +97,25 @@
                             Ayele by Faffers Inc.
                         </div>
                     </div>
+                    <!--End Footer-->
                 </div>
             </div>
         </div>
     </div>
     <script src="js/config.js"></script>
     <script src="js/jquery.min.js"></script>
+    <script src="js/modules/notify.min.js"></script>
     <script src="js/angular/angular.min.js"></script>
     <script src="js/angular/angular-ui-router.min.js"></script>
     <script src="js/app.module.js"></script>
     <script src="js/factories/file-system.factory.js"></script>
     <script src="js/factories/stor.factory.js"></script>
     <script src="js/controllers/sounds.ctrl.js"></script>
+    <script src="js/controllers/my-memes.ctrl.js"></script>
+    <script src="js/directives/input-file-sound.dir.js"></script>
+    <script src="js/directives/create-sound-meme.dir.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    <!--<script>
-        // For Tabs
-        $(function () {
-            $('.js-tabs a').click(function (e) {
-                e.preventDefault();
-                $(this).tab('show');
-            })
-        });
-
-        // For input form
-        $(function () {
-            $('.js-inputfile').each(function () {
-                var $el = $(this),
-                    $label = $el.next('label'),
-                    labelVal = $label.html();
-
-                $el.on('change', function (e) {
-                    var fileName = '';
-
-                    if (this.files && this.files.length > 1)
-                        fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
-                    else if (e.target.value)
-                        fileName = e.target.value.split('\\').pop();
-
-                    if (fileName)
-                        $label.find('span').html(fileName);
-                    else
-                        $label.html(labelVal);
-                });
-
-                // Firefox bug fix
-                $el
-                    .on('focus', function () { $el.addClass('has-focus'); })
-                    .on('blur', function () { $el.removeClass('has-focus'); });
-            });
-        });
-    </script>-->
 </body>
 
 </html>

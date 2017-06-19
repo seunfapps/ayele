@@ -322,6 +322,10 @@ a:hover, a:focus {
 	color: #fff;
 }
 
+input.ng-dirty.ng-invalid, .input-error, select.ng-dirty.ng-invalid {
+    border: 1px solid red !important;
+}
+
 
 /* Medium devices (desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
