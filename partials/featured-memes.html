@@ -1,7 +1,7 @@
 <div class="row no-margin-right">
     <ul>
-        <li ng-repeat="audio in playlists | filter:search" ng-click="audio.play()" class="col-lg-3 col-md-3 col-xs-4">
-            <a href="#!" class="ripple" ng-class="{ 'shake': audio.playing }">
+        <li ng-repeat="audio in playlists | filter:search" ng-click="audio.play()" long-press-href="{{rootUrl('#' + audio.nameUrl)}}" class="col-lg-3 col-md-3 col-xs-4">
+            <a class="ripple" ng-class="{ 'shake': audio.playing }">
                 <div class="main-content-card">
                     <div class="content-card-image">
                         <img src="img/speaker.gif" class="speaker" ng-if="audio.playing">

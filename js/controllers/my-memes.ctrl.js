@@ -57,4 +57,5 @@ myApp.controller('MyMemesCtrl', function ($scope, $http, StorFactory, FileSystem
         }
         $scope.playlists.push(obj);
     });
+    $scope.rootUrl = rootUrl;
 });

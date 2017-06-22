@@ -2,13 +2,18 @@
 
 var myApp = angular.module('myApp', ['ui.router']);
 
-myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
+myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $compileProvider) {
+    //$locationProvider.html5Mode(true);
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|whatsapp):/);
     $urlRouterProvider.otherwise('/');
     $stateProvider
         .state('featured-memes', {
             url: '/',
             templateUrl: rootUrl('partials/featured-memes.html')
+        })
+        .state('featured-meme', {
+            url: '/:memeTitle',
+            templateUrl: rootUrl('partials/featured-meme.html')
         })
         .state('my-memes', {
             url: '/my-memes',

@@ -1,0 +1,35 @@
+<div class="row no-margin-right left-content">
+    <div class="col-sm-12">
+        <h4>
+            <a ui-sref="featured-memes">Go Back</a>
+        </h4>
+        <div class="row">
+            <div class="col-sm-3">
+                <div>
+                    <img src="img/speaker.gif" class="speaker" ng-if="audio.playing">
+                    <img ng-src="{{audio.img}}" ng-alt="{{audio.name}}">
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <h3 ng-bind="audio.name"></h3>
+            </div>
+            <div class="col-sm-6">
+                <audio controls="controls" ng-src="{{audio.url}}"></audio>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="content-tabs-social">
+                    <ul>
+                        <li><a ng-href="https://twitter.com/share?url={{encodeUri('https://seunsaber.github.io/ayele/#/' + audio.nameUrl)}}&text=The%20Ayele%20App%20has%20fun%20sounds%20that%20spice%20up%20your%20conversations&hashtags=Ayele,Sound,Memes"
+                                target="_blank" title="Share on Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="https://web.facebook.com/sharer/sharer.php?u={{encodeUri('https://seunsaber.github.io/ayele/#/' + audio.nameUrl)}}&t=The%20Ayele%20App%20has%20fun%20sounds%20that%20spice%20up%20your%20conversations"
+                                target="_blank" title="Share on Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="whatsapp://send?text=The%20Ayele%20App%20has%20fun%20sounds%20that%20spice%20up%20your%20conversations%20{{encodeUri('https://seunsaber.github.io/ayele/#/' + audio.nameUrl)}}"
+                                target="_blank" data-action="share/whatsapp/share" title="Share on WhatsApp"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
