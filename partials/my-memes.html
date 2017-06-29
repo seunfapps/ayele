@@ -4,32 +4,67 @@
             data-multiple-caption="{count} files selected" input-file-sound required />
         <label for="file-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span ng-bind="newSound.fileName || 'Add your audio meme ...'"></span></label>
 
-        <div class="row" ng-if="newSound.data">
-            <div class="col-sm-2 img-entry" ng-click="play()" ng-class="{ 'shake': newSound.playing }">
+        <div class="row no-row" ng-if="newSound.data">
+            <!--<div class="col-sm-2 img-entry" ng-click="play()" ng-class="{ 'shake': newSound.playing }">
                 <div class="main-content-card">
                     <div class="content-card-image">
                         <img src="img/speaker.gif" class="speaker" ng-if="newSound.playing">
                         <img ng-src="{{newSound.image}}" alt="New Sound Meme" />
                     </div>
                 </div>
+            </div>-->
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 title-container">
+                <div class="title-entry-wrapper">
+                    <div class="title-entry hidden">
+                        <input type="text" name="image" class="form-control" ng-model="newSound.image" value="img/grinningface.png">
+                    </div>
+                    <div class="title-entry">
+                        <input type="text" name="title" class="form-control" ng-model="newSound.title" placeholder="Meme Title e.g. Ayele o!" required>
+                    </div>
+                </div>
+                <!--<div class="image-dropdown">
+                    <input checked="checked" type="radio" id="line1" name="line-style" value="1"  /><label for="line1"></label>
+                    <input type="radio" id="line2" name="line-style" value="2"  /><label for="line2"></label>
+                    <input type="radio" id="line3" name="line-style" value="3"  /><label for="line3"></label>
+                    <input type="radio" id="line4" name="line-style" value="4"  /><label for="line4"></label>
+                    <input type="radio" id="line5" name="line-style" value="5"  /><label for="line5"></label>
+                    <input type="radio" id="line6" name="line-style" value="6"  /><label for="line6"></label>
+                    <input type="radio" id="line7" name="line-style" value="7"  /><label for="line7"></label>
+                </div>-->
+                <div id="image-dropdown">
+                    <label><input type="radio" checked="checked" name="line-style" value="1" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="2" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="3" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="4" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="5" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="6" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="7" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="8" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="9" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="10" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="11" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="12" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="13" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="14" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="15" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="16" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="17" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="18" /><img src="/img/angryface.png"></label>
+                    <label><input type="radio" name="line-style" value="19" /><img src="/img/angryface.png"></label>
+                </div>
+                <div class="">
+                    <button type="submit" class="btn add-btn">Add to collection</button>
+                </div>
+                <div class="audio-entry hidden">
+                    <audio controls="true" src=""></audio>
+                </div>
             </div>
-            <div class="col-sm-10 title-entry hidden">
-                <input type="text" name="image" class="form-control" ng-model="newSound.image" value="img/grinningface.png">
-            </div>
-            <div class="col-sm-10 title-entry">
-                <input type="text" name="title" class="form-control" ng-model="newSound.title" placeholder="Meme Title e.g. Ayele o!" required>
-            </div>
-            <div class="col-sm-12">
-                <button type="submit">Add to collection</button>
-            </div>
-            <div class="col-sm-12 audio-entry hidden">
-                <audio controls="true" src=""></audio>
-            </div>
+            
         </div>
     </form>
 </div>
 
-<div class="row no-margin-right">
+<div class="row no-margin-right no-row">
     <ul>
         <li ng-repeat="audio in playlists | filter:search" ng-click="audio.play()" class="col-lg-3 col-md-3 col-xs-4">
             <a href="#!" class="ripple" ng-class="{ 'shake': audio.playing }">
