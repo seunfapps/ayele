@@ -10,3 +10,6 @@ Ayele is also on the [Chrome Store](https://chrome.google.com/webstore/detail/ay
 - CSS
 - AngularJS
 
+## Contributions
+
+Please see the [Contributions guide](./CONTRIBUTION.md)
