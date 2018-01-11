@@ -108,5 +108,10 @@
         "name": "waka come",
         "url": "audio/wakacome.mp3",
         "img": "img/cryinglaugh.png"
+    },
+    {
+        "name": "shut up your mouth joor",
+        "url": "audio/shutupyourmouthjoor.mp3",
+        "img": "img/shutupyourmouthjoor.png"
     }
 ]
